@@ -1,0 +1,15 @@
+[General]
+ShowNotifications=1
+KeepSelectedArea=0
+CaptureCursor=0
+StartWithWindows=0
+UiLanguage=0
+
+[Update]
+CheckOnStartup=1
+UpdateUrl=
+LastCheck=0
+
+[Cloud]
+EnableUpload=1
+UploadUrl=https://0x0.st

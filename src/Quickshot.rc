@@ -1,0 +1,192 @@
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#undef APSTUDIO_READONLY_SYMBOLS
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+
+/////////////////////////////////////////////////////////////////////////////
+// Icon
+IDI_APP                 ICON         "..\\assets\\icons\\Screenshot_App.ico"
+IDI_TRAY                ICON         "..\\assets\\icons\\Screenshot_Tray.ico"
+IDI_QUICKSHOT           ICON         "..\\assets\\icons\\Screenshot_App.ico"
+IDI_SMALL               ICON         "..\\assets\\icons\\Screenshot_Tray.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+// Toolbar PNG icons (32x32)
+IDR_PNG32_PENCIL        RCDATA      "..\\assets\\toolbar\\32\\icon_pencil.png"
+IDR_PNG32_LINE          RCDATA      "..\\assets\\toolbar\\32\\icon_line.png"
+IDR_PNG32_RECT          RCDATA      "..\\assets\\toolbar\\32\\icon_rect.png"
+IDR_PNG32_ELLIPSE       RCDATA      "..\\assets\\toolbar\\32\\icon_ellipse.png"
+IDR_PNG32_TEXT          RCDATA      "..\\assets\\toolbar\\32\\icon_text.png"
+IDR_PNG32_COLOR         RCDATA      "..\\assets\\toolbar\\32\\icon_color.png"
+IDR_PNG32_UNDO          RCDATA      "..\\assets\\toolbar\\32\\icon_undo.png"
+IDR_PNG32_COPY          RCDATA      "..\\assets\\toolbar\\32\\icon_copy.png"
+IDR_PNG32_SAVE          RCDATA      "..\\assets\\toolbar\\32\\icon_save.png"
+IDR_PNG32_CLOSE         RCDATA      "..\\assets\\toolbar\\32\\icon_close.png"
+IDR_PNG32_BOLD          RCDATA      "..\\assets\\toolbar\\32\\icon_bold.png"
+IDR_PNG32_ITALIC        RCDATA      "..\\assets\\toolbar\\32\\icon_italic.png"
+IDR_PNG32_UNDERLINE     RCDATA      "..\\assets\\toolbar\\32\\icon_underline.png"
+IDR_PNG32_FONT_INC      RCDATA      "..\\assets\\toolbar\\32\\icon_font_inc.png"
+IDR_PNG32_FONT_DEC      RCDATA      "..\\assets\\toolbar\\32\\icon_font_dec.png"
+IDR_PNG32_ARROW         RCDATA      "..\\assets\\toolbar\\32\\icon_arrow.png"
+IDR_PNG32_HIGHLIGHT     RCDATA      "..\\assets\\toolbar\\32\\icon_highlight.png"
+IDR_PNG32_UPLOAD        RCDATA      "..\\assets\\toolbar\\32\\icon_upload.png"
+IDR_PNG32_SHARE         RCDATA      "..\\assets\\toolbar\\32\\icon_share.png"
+
+/////////////////////////////////////////////////////////////////////////////
+// Toolbar PNG icons (64x64)
+IDR_PNG64_PENCIL        RCDATA      "..\\assets\\toolbar\\64\\icon_pencil.png"
+IDR_PNG64_HIGHLIGHT     RCDATA      "..\\assets\\toolbar\\64\\icon_highlight.png"
+IDR_PNG64_LINE          RCDATA      "..\\assets\\toolbar\\64\\icon_line.png"
+IDR_PNG64_ARROW         RCDATA      "..\\assets\\toolbar\\64\\icon_arrow.png"
+IDR_PNG64_RECT          RCDATA      "..\\assets\\toolbar\\64\\icon_rect.png"
+IDR_PNG64_ELLIPSE       RCDATA      "..\\assets\\toolbar\\64\\icon_ellipse.png"
+IDR_PNG64_TEXT          RCDATA      "..\\assets\\toolbar\\64\\icon_text.png"
+IDR_PNG64_COLOR         RCDATA      "..\\assets\\toolbar\\64\\icon_color.png"
+IDR_PNG64_UNDO          RCDATA      "..\\assets\\toolbar\\64\\icon_undo.png"
+IDR_PNG64_COPY          RCDATA      "..\\assets\\toolbar\\64\\icon_copy.png"
+IDR_PNG64_SAVE          RCDATA      "..\\assets\\toolbar\\64\\icon_save.png"
+IDR_PNG64_CLOSE         RCDATA      "..\\assets\\toolbar\\64\\icon_close.png"
+IDR_PNG64_BOLD          RCDATA      "..\\assets\\toolbar\\64\\icon_bold.png"
+IDR_PNG64_ITALIC        RCDATA      "..\\assets\\toolbar\\64\\icon_italic.png"
+IDR_PNG64_UNDERLINE     RCDATA      "..\\assets\\toolbar\\64\\icon_underline.png"
+IDR_PNG64_FONT_INC      RCDATA      "..\\assets\\toolbar\\64\\icon_font_inc.png"
+IDR_PNG64_FONT_DEC      RCDATA      "..\\assets\\toolbar\\64\\icon_font_dec.png"
+IDR_PNG64_UPLOAD        RCDATA      "..\\assets\\toolbar\\64\\icon_upload.png"
+IDR_PNG64_SHARE         RCDATA      "..\\assets\\toolbar\\64\\icon_share.png"
+
+/////////////////////////////////////////////////////////////////////////////
+// Dialog — Options
+IDD_OPTIONS DIALOGEX 0, 0, 320, 250
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Options"
+FONT 9, "Segoe UI"
+BEGIN
+    CONTROL         "",IDC_TAB_OPTIONS,"SysTabControl32",WS_TABSTOP,7,7,306,208
+
+    CONTROL         "Show notifications about copying and saving",IDC_CHK_NOTIFY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,40,280,12
+    CONTROL         "Keep the selected area position",IDC_CHK_KEEP_AREA,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,58,280,12
+    CONTROL         "Capture a cursor on a screenshot",IDC_CHK_CURSOR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,76,280,12
+    CONTROL         "Autostart (Start with Windows)",IDC_CHK_START_WINDOWS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,94,280,12
+    LTEXT           "Language:",IDC_LBL_LANGUAGE,20,116,60,12
+    COMBOBOX        IDC_COMBO_LANGUAGE,85,114,120,80,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+
+    CONTROL         "General hotkey",IDC_CHK_HOTKEY_CAPTURE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,40,120,12
+    EDITTEXT        IDC_EDIT_HOTKEY_CAPTURE,150,38,140,14,ES_READONLY | WS_TABSTOP
+    CONTROL         "Instant save of the fullscreen",IDC_CHK_HOTKEY_FULLSAVE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,62,140,12
+    EDITTEXT        IDC_EDIT_HOTKEY_FULLSAVE,150,60,140,14,ES_READONLY | WS_TABSTOP
+    LTEXT           "Click a hotkey field, then press the desired key combination.",IDC_LBL_HOTKEY_HINT,20,90,280,20
+
+    LTEXT           "Default format:",IDC_LBL_FMT,20,40,80,12
+    CONTROL         "PNG",IDC_RADIO_FMT_PNG,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,100,38,50,14
+    CONTROL         "JPEG",IDC_RADIO_FMT_JPEG,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,155,38,50,14
+    LTEXT           "JPEG quality (1-100):",IDC_LBL_JPEG_QUALITY,20,62,110,12
+    EDITTEXT        IDC_EDIT_JPEG_QUALITY,135,60,40,14,ES_NUMBER | WS_TABSTOP
+    LTEXT           "Filename pattern:",IDC_LBL_FILENAME,20,86,100,12
+    EDITTEXT        IDC_EDIT_FILENAME,20,100,280,14,ES_AUTOHSCROLL | WS_TABSTOP
+    LTEXT           "Placeholders: {yyyy} {MM} {dd} {HH} {mm} {ss}",IDC_LBL_FILENAME_HINT,20,118,280,12
+    LTEXT           "Default save folder:",IDC_LBL_SAVE_FOLDER,20,138,140,12
+    EDITTEXT        IDC_EDIT_SAVE_FOLDER,20,152,230,14,ES_AUTOHSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Browse...",IDC_BTN_BROWSE_FOLDER,255,151,50,14
+
+    CONTROL         "Enable image upload",IDC_CHK_ENABLE_UPLOAD,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,40,280,12
+    LTEXT           "Upload URL:",IDC_LBL_UPLOAD_URL,20,62,80,12
+    EDITTEXT        IDC_EDIT_UPLOAD_URL,20,76,280,14,ES_AUTOHSCROLL | WS_TABSTOP
+    LTEXT           "Server should accept multipart field 'file' and return a URL (text or JSON).",IDC_LBL_UPLOAD_HINT,20,96,280,28
+
+    CONTROL         "Use HTTP proxy for upload",IDC_CHK_PROXY_ENABLE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,40,280,12
+    LTEXT           "Host:",IDC_LBL_PROXY_HOST,20,62,40,12
+    EDITTEXT        IDC_EDIT_PROXY_HOST,65,60,160,14,ES_AUTOHSCROLL | WS_TABSTOP
+    LTEXT           "Port:",IDC_LBL_PROXY_PORT,235,62,30,12
+    EDITTEXT        IDC_EDIT_PROXY_PORT,265,60,40,14,ES_NUMBER | WS_TABSTOP
+    LTEXT           "Username:",IDC_LBL_PROXY_USER,20,86,60,12
+    EDITTEXT        IDC_EDIT_PROXY_USER,85,84,200,14,ES_AUTOHSCROLL | WS_TABSTOP
+    LTEXT           "Password:",IDC_LBL_PROXY_PASS,20,108,60,12
+    EDITTEXT        IDC_EDIT_PROXY_PASS,85,106,200,14,ES_PASSWORD | ES_AUTOHSCROLL | WS_TABSTOP
+    LTEXT           "When disabled, Windows system proxy is used. Username/password are optional.",IDC_LBL_PROXY_HINT,20,130,280,28
+
+    CONTROL         "Check for updates on startup",IDC_CHK_CHECK_UPDATES,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,140,280,12
+    LTEXT           "Update manifest URL:",IDC_LBL_UPDATE_URL,20,158,140,12
+    EDITTEXT        IDC_EDIT_UPDATE_URL,20,172,280,14,ES_AUTOHSCROLL | WS_TABSTOP
+
+    DEFPUSHBUTTON   "OK",IDOK,208,224,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,263,224,50,14
+END
+
+/////////////////////////////////////////////////////////////////////////////
+// Version — author shown in file properties
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,2,1,0
+ PRODUCTVERSION 1,2,1,0
+ FILEFLAGSMASK 0x3fL
+ FILEFLAGS 0x0L
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "Ivan Stojmenovic"
+            VALUE "FileDescription", "Quickshot"
+            VALUE "FileVersion", "1.2.1"
+            VALUE "InternalName", "Quickshot"
+            VALUE "LegalCopyright", "Copyright (c) 2026 Ivan Stojmenovic"
+            VALUE "OriginalFilename", "Quickshot.exe"
+            VALUE "ProductName", "Quickshot"
+            VALUE "ProductVersion", "1.2.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+/////////////////////////////////////////////////////////////////////////////
+// About
+IDD_ABOUTBOX DIALOGEX 0, 0, 280, 148
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Quickshot"
+FONT 9, "Segoe UI"
+BEGIN
+    ICON            IDI_APP,IDC_STATIC,14,14,21,20
+    LTEXT           "Quickshot",IDC_ABOUT_TITLE,48,14,210,12,SS_NOPREFIX
+    LTEXT           "Version 1.2.1",IDC_ABOUT_VERSION,48,28,210,12,SS_NOPREFIX
+    LTEXT           "Author: Ivan Stojmenovic",IDC_ABOUT_AUTHOR,48,44,210,12,SS_NOPREFIX
+    CONTROL         "",IDC_ABOUT_EMAIL,"SysLink",WS_TABSTOP,48,58,210,14
+    LTEXT           "Copyright (c) 2026 Ivan Stojmenovic",IDC_ABOUT_COPYRIGHT,48,76,210,12,SS_NOPREFIX
+    PUSHBUTTON      "Check for updates...",IDC_ABOUT_CHECK_UPDATE,14,104,120,14
+    DEFPUSHBUTTON   "OK",IDOK,214,104,50,14,WS_GROUP
+END
+
+/////////////////////////////////////////////////////////////////////////////
+// String Table
+STRINGTABLE
+BEGIN
+   IDC_QUICKSHOT      "QUICKSHOT"
+   IDS_APP_TITLE       "Quickshot"
+END
+
+#endif
+
+#ifndef APSTUDIO_INVOKED
+#endif

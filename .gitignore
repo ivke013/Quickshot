@@ -1,0 +1,43 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.VC.db
+*.VC.opendb
+ipch/
+*.aps
+
+# Build output
+build/
+x64/
+Win32/
+[Dd]ebug/
+[Rr]elease/
+*.obj
+*.pch
+*.pdb
+*.ilk
+*.idb
+*.iobj
+*.ipdb
+*.tlog
+*.recipe
+*.lastbuildstate
+*.log
+*.res
+*.exe
+*.dll
+
+# Installer output and local caches
+dist/
+_icon_cmp/
+
+# Local settings written next to a dev build
+settings.ini
+
+# Editor
+.cursor/
+
+# Python
+__pycache__/
+*.pyc

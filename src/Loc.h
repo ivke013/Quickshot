@@ -1,0 +1,156 @@
+// Author: Ivan Stojmenovic
+#pragma once
+#include "framework.h"
+
+enum class UiLang
+{
+    En = 0,
+    Sr = 1,
+    De = 2,
+    Fr = 3,
+    Es = 4,
+    It = 5,
+    Ru = 6,
+    Hr = 7,
+    Count
+};
+
+enum class StrId
+{
+    TrayCapture = 0,
+    TrayOptions,
+    TrayAbout,
+    TrayShare,
+    TrayCopyLink,
+    TrayOpenLink,
+    TrayExit,
+    NotifyCopied,
+    NotifySaved,
+    NotifyUploaded,
+    NotifyUploadFailed,
+    NotifyUploadDisabled,
+    NotifyLinkCopied,
+    NotifyPrinted,
+    NotifySearchOpened,
+    NotifyTitle,
+
+    OptCaption,
+    TabGeneral,
+    TabHotkeys,
+    TabFormats,
+    TabCloud,
+    TabProxy,
+    ChkNotify,
+    ChkKeepArea,
+    ChkCursor,
+    ChkAutostart,
+    ChkHotkeyCapture,
+    ChkHotkeyFullsave,
+    HotkeyHint,
+    PressKey,
+    LblLanguage,
+    LblFmt,
+    LblJpegQuality,
+    LblFilename,
+    LblFilenameHint,
+    LblSaveFolder,
+    BtnBrowse,
+    BrowseFolderTitle,
+    LangEnglish,
+    LangSerbian,
+    ChkEnableUpload,
+    LblUploadUrl,
+    LblUploadHint,
+    ChkProxyEnable,
+    LblProxyHost,
+    LblProxyPort,
+    LblProxyUser,
+    LblProxyPass,
+    LblProxyHint,
+
+    TipPencil,
+    TipHighlight,
+    TipLine,
+    TipArrow,
+    TipRectangle,
+    TipEllipse,
+    TipText,
+    TipStrokeColor,
+    TipUndo,
+    TipThinner,
+    TipThicker,
+    TipCopy,
+    TipSave,
+    TipUpload,
+    TipShare,
+    TipClose,
+    TipBold,
+    TipItalic,
+    TipUnderline,
+    TipFontInc,
+    TipFontDec,
+    TipTextColor,
+
+    MenuCopy,
+    MenuSave,
+    MenuShare,
+    MenuUpload,
+    MenuCopyLink,
+    MenuOpenLink,
+    MenuPrint,
+    MenuSearchImage,
+    MenuUndo,
+    MenuRedo,
+    MenuDuplicate,
+    MenuLock,
+    MenuUnlock,
+    MenuDelete,
+    MenuBringForward,
+    MenuSendBackward,
+    MenuBringFront,
+    MenuSendBack,
+    MenuRotateLeft,
+    MenuRotateRight,
+    MenuHintNudge,
+    MenuHintCycle,
+    MenuHintSnap,
+    MenuHintCommitText,
+    MenuCancel,
+    TextDragGrip,
+
+    AboutCaption,
+    AboutTitle,
+    AboutVersionFmt,
+    AboutCopyright,
+    AboutAuthor,
+    AboutEmail,
+    BtnCheckUpdates,
+    TrayCheckUpdates,
+    UpdateTitle,
+    UpdateNoUrl,
+    UpdateBadUrl,
+    UpdateBadManifest,
+    UpdateFailed,
+    UpdateLatest,
+    UpdateAvailable,
+    UpdateCurrent,
+    UpdateNew,
+    UpdateAsk,
+    UpdateRestarting,
+    ChkCheckUpdates,
+    LblUpdateUrl,
+
+    Count
+};
+
+class Loc
+{
+public:
+    static void SetLanguage(UiLang lang);
+    static UiLang GetLanguage();
+    static UiLang FromIndex(int index);
+    static int ToIndex(UiLang lang);
+    static int LanguageCount();
+    static const wchar_t* LanguageDisplayName(int index); // native name
+    static const wchar_t* T(StrId id);
+};
